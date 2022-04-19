@@ -21,17 +21,17 @@
   },
   "plugins": [
     "react", // https://github.com/yannickcr/eslint-plugin-react
-    "@typescript-eslint" // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
-    // "testing-library",    // https://github.com/testing-library/eslint-plugin-testing-library
-    // "jest-dom"            // https://github.com/testing-library/eslint-plugin-jest-dom
+    "@typescript-eslint", // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+    "testing-library", // https://github.com/testing-library/eslint-plugin-testing-library
+    "jest-dom" // https://github.com/testing-library/eslint-plugin-jest-dom
   ],
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    // "plugin:testing-library/recommended",
-    // "plugin:testing-library/react",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
     "plugin:prettier/recommended",
     "prettier"
   ],
@@ -40,11 +40,11 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.js"
-      ],
+      "files": ["*.js"],
       "rules": {
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "testing-library/await-async-query": "error",
+        "testing-library/no-await-sync-query": "error"
       }
     }
   ]
