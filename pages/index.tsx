@@ -1,7 +1,7 @@
-import { HelloWorld } from "../components/hello-world";
+import { Header } from "../components/header/header.component";
 
 const Index = () => {
-  return <HelloWorld />;
+  return <Header />;
 };
 
 export default Index;
