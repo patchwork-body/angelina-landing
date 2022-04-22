@@ -6,7 +6,6 @@ const tailwindConfig = {
   theme: {
     extend: {
       fontFamily: {
-        cursive: "'Amatic SC', cursive",
         "serif": "'Montserrat', sans-serif",
       },
     },

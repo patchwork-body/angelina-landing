@@ -1,21 +1,20 @@
-import { Padding } from "../padding";
+import { FC } from "react";
 
-export const Header = () => {
+import { HeaderNavigation } from "../header-navigation";
+import { Layout } from "../layout";
+
+export const Header: FC = () => {
   return (
-    <div>
-      <Padding>
-        <header className="grid grid-cols-[1fr,auto] px-4 py-2">
-          <h1 className="font-semibold text-4xl">British Puggy</h1>
+    <div className="sticky top-0 px-5 py-4">
+      <Layout>
+        <header className="grid grid-cols-[1fr,auto]">
+          <h1 className="items-center font-semibold text-4xl leading-loose">
+            Очень крутое название
+          </h1>
 
-          <nav className="grid">
-            <ul className="grid grid-cols-[repeat(3,auto)] items-center text-center gap-x-4">
-              <li>Подделиться</li>
-              <li>Блог</li>
-              <li>О нас</li>
-            </ul>
-          </nav>
+          <HeaderNavigation />
         </header>
-      </Padding>
+      </Layout>
     </div>
   );
 };
