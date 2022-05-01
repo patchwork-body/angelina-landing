@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <div className="relative">
       <StickySlideContextProvider className="bg-pink-100">
-        <StickyPostageStamp bgImageHref="/big-ben.jpeg" fillColor="#fff" />
+        <StickyPostageStamp bgImageHref="/church.jpg" fillColor="#fff" />
         <StickyHeading>Заголовок #2</StickyHeading>
       </StickySlideContextProvider>
 

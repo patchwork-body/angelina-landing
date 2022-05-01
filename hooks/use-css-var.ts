@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 
 export const useCssVar = (name: string) => {
+  const propertyName = `--${name}`;
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -8,11 +9,14 @@ export const useCssVar = (name: string) => {
   }, []);
 
   const setValue = useCallback(
-    (value: string) => {
-      root.current.style.setProperty(`--${name}`, value);
+    (cb: (value: number) => string) => {
+      root.current.style.setProperty(
+        propertyName,
+        cb(parseFloat(window.getComputedStyle(root.current).getPropertyValue(propertyName))),
+      );
     },
 
-    [name],
+    [propertyName],
   );
 
   return setValue;

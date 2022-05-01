@@ -34,8 +34,8 @@ export const PostageStamp: FC<PostageStampProps> = ({ fillColor, bgImageHref }) 
         fill={`url(#pattern-postage-stamp-${bgImageHref})`}
         x="140"
         y="130"
-        rx="100"
-        ry="100"
+        rx="40"
+        ry="40"
         width="700"
         height="1000"
       />

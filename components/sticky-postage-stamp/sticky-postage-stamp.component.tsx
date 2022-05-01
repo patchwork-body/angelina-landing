@@ -1,8 +1,8 @@
-import { FC, useCallback, useContext, useEffect, useRef } from "react";
+import { FC, useCallback, useContext, useRef } from "react";
 import { StickySlideContext } from "../../contexes/sticky-slide";
+import { useAnimation } from "../../hooks/use-animation";
 import { useCssVar } from "../../hooks/use-css-var";
 import { PostageStamp, PostageStampProps } from "../postage-stamp";
-
 export type StickyPostageStampProps = PostageStampProps;
 
 export const StickyPostageStamp: FC<StickyPostageStampProps> = ({ ...postageStampProps }) => {
@@ -12,7 +12,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({ ...postageStam
   const setTranslateYValue = useCssVar("postage-stamp-translate-y");
 
   const movePostageStamp = useCallback(() => {
-    const offset = slideRef.current.getBoundingClientRect().top;
+    const offset = slideRef.current?.getBoundingClientRect().top;
     containerRef.current.style.top = `${offset > 0 ? -offset : Math.abs(offset)}px`;
 
     const scrollRatioPercent = parseFloat(
@@ -22,14 +22,12 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({ ...postageStam
       ).toFixed(2),
     );
 
-    setRotateAngleValue(`${scrollRatioPercent * 240}deg`);
-    setTranslateYValue(`${scrollRatioPercent * 150}%`);
+    setRotateAngleValue(() => `${Math.round(scrollRatioPercent * 360 - 140)}deg`);
+    setTranslateYValue(() => `${scrollRatioPercent * 150}%`);
     window.requestAnimationFrame(movePostageStamp);
   }, [setRotateAngleValue, setTranslateYValue, slideRef]);
 
-  useEffect(() => {
-    window.requestAnimationFrame(movePostageStamp);
-  }, [movePostageStamp, setRotateAngleValue]);
+  useAnimation({ cb: movePostageStamp, fps: 1 });
 
   return (
     <div
