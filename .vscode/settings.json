@@ -24,5 +24,7 @@
     },
     "editor.suggest.insertMode": "replace",
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "tailwindCSS.classAttributes": ["className", "slideClassName", "titleClassName"],
+  "editor.rulers": [100]
 }

@@ -13,3 +13,8 @@
 
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --postage-stamp-rotate-angle: 0deg;
+  --postage-stamp-translate-y: 0px;
+}

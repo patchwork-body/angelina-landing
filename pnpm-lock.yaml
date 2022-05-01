@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ~5.20.0
   '@typescript-eslint/parser': ~5.20.0
   autoprefixer: ~10.4.4
+  classnames: ~2.3.1
   eslint: 8.13.0
   eslint-config-next: 12.1.5
   eslint-config-prettier: ~8.5.0
@@ -29,6 +30,7 @@ specifiers:
   typescript: 4.6.3
 
 dependencies:
+  classnames: 2.3.1
   next: 12.1.5_react-dom@18.0.0+react@18.0.0
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
@@ -1815,6 +1817,10 @@ packages:
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: true
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
 
   /cliui/7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}

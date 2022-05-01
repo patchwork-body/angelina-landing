@@ -17,6 +17,7 @@ const Document = () => {
           rel="stylesheet"
         />
       </Head>
+
       <body>
         <Main />
         <NextScript />
