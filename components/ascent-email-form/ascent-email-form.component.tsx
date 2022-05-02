@@ -4,6 +4,10 @@ import { useForm } from "react-hook-form";
 
 import { StickySlideContext } from "../../contexes/sticky-slide";
 
+type FormValues = {
+  email: string;
+};
+
 export const AscentEmailForm: FC = () => {
   const { setupIntersectionObserver } = useContext(StickySlideContext);
   const [isTheBottom, setIsTheBottom] = useState(false);
@@ -23,13 +27,16 @@ export const AscentEmailForm: FC = () => {
     [onIntersection, setupIntersectionObserver],
   );
 
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch } = useForm<FormValues>({
     mode: "onChange",
     defaultValues: { email: "" },
   });
 
   const isEmailProvided = watch("email").length > 0;
-  const submit = useCallback(() => {}, []);
+
+  const submit = useCallback((values: FormValues) => {
+    console.log(values);
+  }, []);
 
   return (
     <form

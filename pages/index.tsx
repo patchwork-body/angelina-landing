@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { AscentEmailForm } from "../components/ascent-email-form";
+import { MoveToButtomButton } from "../components/move-to-bottom-button";
 import { StickyHeading } from "../components/sticky-heading";
 import { StickyPostageStamp } from "../components/sticky-postage-stamp";
 import { StickySlideContextProvider } from "../contexes/sticky-slide";
@@ -33,11 +34,7 @@ const Index = () => {
           </div>
         </StickyHeading>
 
-        <span className="animate-appearance absolute bottom-0 left-0 mb-20 ml-20 text-gray-100 font-serif font-semibold text-4xl">
-          Запишись
-          <br />
-          на свой первый урок
-        </span>
+        <MoveToButtomButton />
       </StickySlideContextProvider>
 
       <StickySlideContextProvider className="bg-purple-300">
