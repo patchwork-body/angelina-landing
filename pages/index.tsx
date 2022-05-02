@@ -1,4 +1,4 @@
-import { AscentEmailInput } from "../components/ascent-email-input";
+import { AscentEmailForm } from "../components/ascent-email-form";
 import { StickyHeading } from "../components/sticky-heading";
 import { StickyPostageStamp } from "../components/sticky-postage-stamp";
 import { StickySlideContextProvider } from "../contexes/sticky-slide";
@@ -44,7 +44,7 @@ const Index = () => {
         />
 
         <StickyHeading>Заголовок #4</StickyHeading>
-        <AscentEmailInput />
+        <AscentEmailForm />
       </StickySlideContextProvider>
     </div>
   );
