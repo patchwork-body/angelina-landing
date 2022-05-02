@@ -8,7 +8,7 @@ const Index = () => {
     <div className="relative">
       <StickySlideContextProvider className="bg-pink-100">
         <StickyPostageStamp
-          // className="absolute left-52 hidden md:block drop-shadow-lg"
+          className="absolute left-52 hidden md:block drop-shadow-lg"
           bgImageHref="/church.jpg"
           fillColor="#fff"
         />
@@ -18,7 +18,7 @@ const Index = () => {
 
       <StickySlideContextProvider className="bg-slate-300">
         <StickyPostageStamp
-          // className="absolute left-52 hidden md:block drop-shadow-lg"
+          className="absolute left-52 hidden md:block drop-shadow-lg"
           bgImageHref="/bridge.jpeg"
           fillColor="#fff"
         />
@@ -28,7 +28,7 @@ const Index = () => {
 
       <StickySlideContextProvider className="bg-yellow-200">
         <StickyPostageStamp
-          // className="absolute left-52 hidden md:block drop-shadow-lg"
+          className="absolute left-52 hidden md:block drop-shadow-lg"
           bgImageHref="/wheel.jpeg"
           fillColor="#fff"
         />
@@ -38,7 +38,7 @@ const Index = () => {
 
       <StickySlideContextProvider className="bg-yellow-200 grid place-items-center">
         <StickyPostageStamp
-          // className="absolute left-52 hidden md:block drop-shadow-lg"
+          className="absolute left-52 hidden md:block drop-shadow-lg"
           bgImageHref="/wheel.jpeg"
           fillColor="#fff"
         />
