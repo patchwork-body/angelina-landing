@@ -44,7 +44,7 @@ const Index = () => {
         />
 
         <StickyHeading>Заголовок #4</StickyHeading>
-        <AscentEmailForm />
+        {/* <AscentEmailForm /> */}
       </StickySlideContextProvider>
     </div>
   );
