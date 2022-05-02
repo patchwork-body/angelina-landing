@@ -29,7 +29,7 @@ export const StickyHeading: FC<StickyHeadingProps> = ({ children, className }) =
     <h1
       ref={headingRef}
       className={classNames(
-        "absolute -top-1/2 -translate-y-1/2 w-full text-center text-4xl font-serif text-gray-700",
+        "absolute -top-1/2 -translate-y-1/2 w-full text-center text-4xl font-serif font-normal text-gray-700",
         className,
       )}
     >
