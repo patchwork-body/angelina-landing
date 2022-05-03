@@ -10,25 +10,28 @@ const Index = () => {
   return (
     <div className="relative">
       <div className="fixed h-screen w-screen">
-        <Image src="/bg.jpeg" width="1920" height="1200" layout="fill" alt="" />
+        <Image src="/bg.jpeg" layout="fill" alt="" />
       </div>
 
-      <StickySlideContextProvider className="bg-gradient-to-t from-rose-500 to-rose-500/30">
+      <StickySlideContextProvider className="bg-gradient-to-t from-rose-500 to-rose-500/30 grid">
         <StickyPostageStamp
           className="absolute left-[5%] hidden md:block drop-shadow-lg"
           bgImageHref="/church.jpg"
-          fillColor="#fff"
+          fillColor="#f3f4f4"
         />
 
-        <StickyHeading className="text-gray-50">
-          <span className="text-[3rem] leading-10">Все еще не говоришь по Английски?</span>
+        <StickyHeading className="grid gap-y-4 lg:gap-y-8 font-serif font-semibold text-gray-100">
+          <span className="text-2xl sm:text-4xl md:text-[3rem] lg:text-[5rem] sm:leading-[1.2]">
+            Все еще не говоришь
+            <br /> по&nbsp;Английски?
+          </span>
 
-          <div className="relative mt-5">
-            <span className="absolute z-10 top-2 left-[33%] bg-yellow-300/90 rounded-full leading-10 px-8 py-4">
+          <div className="grid grid-flow-col mx-auto lg:text-3xl">
+            <span className="bg-yellow-400/90 px-4 py-2 rounded-full -translate-y-1/4 z-10">
               Don&apos;t worry,{" "}
             </span>
 
-            <span className="absolute top-8 left-[47%] bg-blue-300 rounded-full ml-4 px-10 py-4">
+            <span className="bg-sky-500 px-4 py-2 -translate-x-3 rounded-full">
               it will be fun!!!
             </span>
           </div>

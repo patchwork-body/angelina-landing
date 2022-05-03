@@ -39,7 +39,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
     <div
       ref={containerRef}
       className={classNames(
-        "origin-center rotate-[-21deg] translate-y-[var(--postage-stamp-translate-y)] -top-full",
+        "origin-center rotate-[-21deg] translate-y-[var(--postage-stamp-translate-y)] -top-full transition-transform duration-75",
         className,
       )}
     >

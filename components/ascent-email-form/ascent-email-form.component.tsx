@@ -77,7 +77,9 @@ export const AscentEmailForm: FC = () => {
 
       <button
         className={classNames(
-          "absolute -bottom-[calc(100%+1rem)] py-5 bg-green-500 w-full rounded-lg font-semibold font-serif text-2xl text-gray-100 transition-opacity duration-700",
+          "absolute -bottom-[calc(100%+1rem)] py-5 bg-green-500 w-full rounded-lg",
+          "hover:shadow-md outline-none focus:ring-8 ring-blue-200",
+          "font-semibold font-serif text-2xl text-gray-100 transition-all duration-500",
 
           {
             "opacity-0": !isEmailProvided,

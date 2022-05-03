@@ -18,7 +18,7 @@ export const StickyHeading: FC<StickyHeadingProps> = ({ children, className }) =
     }
 
     const offset =
-      slideRef.current?.getBoundingClientRect().top - slideRef.current.clientHeight / 2;
+      slideRef.current?.getBoundingClientRect().top - slideRef.current.clientHeight / 4;
 
     headingRef.current.style.top = `${offset > 0 ? -offset : Math.abs(offset)}px`;
   }, [slideRef]);
@@ -28,10 +28,7 @@ export const StickyHeading: FC<StickyHeadingProps> = ({ children, className }) =
   return (
     <h1
       ref={headingRef}
-      className={classNames(
-        "animate-appearance absolute -top-1/2 -translate-y-1/2 w-full text-center text-4xl font-serif font-semibold text-gray-700",
-        className,
-      )}
+      className={classNames("animate-appearance absolute w-full text-center", className)}
     >
       {children}
     </h1>
