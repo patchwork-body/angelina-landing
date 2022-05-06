@@ -1,32 +1,28 @@
-import Image from "next/image";
-
 import { AscentEmailForm } from "../components/ascent-email-form";
-import { MoveToButtomButton } from "../components/move-to-bottom-button";
-import { StickyHeading } from "../components/sticky-heading";
 import { StickyPostageStamp } from "../components/sticky-postage-stamp";
-import { StickySlideContextProvider } from "../contexes/sticky-slide";
+import { SlideSectionContextProvider } from "../contexes/slide-section";
 
 const Index = () => {
   return (
-    <div className="relative">
-      <div className="fixed h-screen w-screen">
-        <Image src="/bg.jpeg" layout="fill" alt="" />
-      </div>
-
-      <StickySlideContextProvider className="bg-gradient-to-t from-rose-500 to-rose-500/30 grid">
+    <div className="">
+      <SlideSectionContextProvider className="grid relative bg-gradient-to-t from-purple-300 via-sky-600/40 to-rose-800/50">
         <StickyPostageStamp
           className="absolute left-[5%] hidden md:block drop-shadow-lg"
           bgImageHref="/church.jpg"
           fillColor="#f3f4f4"
         />
 
-        <StickyHeading className="grid gap-y-4 lg:gap-y-8 font-serif font-semibold text-gray-100">
-          <span className="text-2xl sm:text-4xl md:text-[3rem] lg:text-[5rem] sm:leading-[1.2]">
+        <video className="-z-10 absolute inset-0 min-w-full" autoPlay loop muted poster="">
+          <source src="/video.mp4" />
+        </video>
+
+        {/* <StickyHeading className="grid gap-y-4 lg:gap-y-8 font-serif font-semibold text-slate-100">
+          <span className="text-3xl sm:text-4xl md:text-[3rem] lg:text-[5rem] sm:leading-[1.2]">
             Все еще не говоришь
             <br /> по&nbsp;Английски?
           </span>
 
-          <div className="grid grid-flow-col mx-auto lg:text-3xl">
+          <div className="grid grid-flow-col mx-auto lg:text-3xl text-gray-100">
             <span className="bg-yellow-400/90 px-4 py-2 rounded-full -translate-y-1/4 z-10">
               Don&apos;t worry,{" "}
             </span>
@@ -35,41 +31,26 @@ const Index = () => {
               it will be fun!!!
             </span>
           </div>
-        </StickyHeading>
+        </StickyHeading> */}
+      </SlideSectionContextProvider>
 
-        <MoveToButtomButton />
-      </StickySlideContextProvider>
-
-      <StickySlideContextProvider className="bg-purple-300">
+      <SlideSectionContextProvider className="bg-gradient-to-t from-yellow-300 via-sky-300-200 to-purple-300">
         <StickyPostageStamp
           className="absolute left-[5%] hidden md:block drop-shadow-lg"
           bgImageHref="/big-ben.jpeg"
           fillColor="#f3f4f4"
         />
+      </SlideSectionContextProvider>
 
-        <StickyHeading>Заголовок #3</StickyHeading>
-      </StickySlideContextProvider>
-
-      <StickySlideContextProvider className="bg-yellow-200">
+      <SlideSectionContextProvider className="grid bg-gradient-to-t from-yellow-600 via-yellow-400 to-yellow-300">
         <StickyPostageStamp
           className="absolute left-[5%] hidden md:block drop-shadow-lg"
           bgImageHref="/wheel.jpeg"
           fillColor="#f3f4f4"
         />
 
-        <StickyHeading>Заголовок #4</StickyHeading>
-      </StickySlideContextProvider>
-
-      <StickySlideContextProvider className="bg-yellow-200 grid place-items-center">
-        <StickyPostageStamp
-          className="absolute left-[5%] hidden md:block drop-shadow-lg"
-          bgImageHref="/wheel.jpeg"
-          fillColor="#f3f4f4"
-        />
-
-        <StickyHeading>Заголовок #4</StickyHeading>
-        <AscentEmailForm />
-      </StickySlideContextProvider>
+        <AscentEmailForm className="absolute place-self-center bottom-0" />
+      </SlideSectionContextProvider>
     </div>
   );
 };

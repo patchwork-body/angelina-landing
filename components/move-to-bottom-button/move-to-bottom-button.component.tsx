@@ -2,7 +2,11 @@ import { FC } from "react";
 import classNames from "classnames";
 import { useCallback } from "react";
 
-export const MoveToButtomButton: FC = () => {
+export type MoveToButtomButtonProps = {
+  className?: string;
+};
+
+export const MoveToButtomButton: FC<MoveToButtomButtonProps> = ({ className }) => {
   const moveToBottom = useCallback(() => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -11,15 +15,7 @@ export const MoveToButtomButton: FC = () => {
   }, []);
 
   return (
-    <button
-      className={classNames(
-        "row-start-4 md:self-center mx-auto ring-2 rounded-lg ring-gray-100 font-serif font-semibold",
-        "px-3 py-2 md:px-6 md:py-4 text-[1.5rem] xl:text-[3rem] text-gray-100",
-        "hover:bg-gray-100 hover:text-rose-500 transition-colors duration-500",
-      )}
-      type="button"
-      onClick={moveToBottom}
-    >
+    <button className={classNames("", className)} type="button" onClick={moveToBottom}>
       Начать учиться
     </button>
   );
