@@ -1,6 +1,7 @@
 import { AscentEmailForm } from "../components/ascent-email-form";
 import { StickyPostageStamp } from "../components/sticky-postage-stamp";
 import { SlideSectionContextProvider } from "../contexes/slide-section";
+import { MoveToButtomButton } from "../components/move-to-bottom-button";
 
 const Index = () => {
   return (
@@ -15,6 +16,27 @@ const Index = () => {
         <video className="-z-10 absolute inset-0 min-w-full" autoPlay loop muted poster="">
           <source src="/video.mp4" />
         </video>
+
+        <div className="grid auto-rows-auto grid-rows-[auto,1fr] gap-y-20 mt-20 text-center font-serif font-semibold text-slate-100">
+          <div className="grid place-items-center auto-rows-min gap-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-[3rem] lg:text-[5rem] sm:leading-[1.2]">
+              Все еще не говоришь
+              <br /> по&nbsp;Английски?
+            </h1>
+
+            <div className="grid grid-flow-col mx-auto lg:text-3xl text-gray-100">
+              <span className="bg-yellow-400/90 px-4 py-2 rounded-full -translate-y-1/4 z-10">
+                Don&apos;t worry,{" "}
+              </span>
+
+              <span className="bg-sky-500 px-4 py-2 -translate-x-3 rounded-full">
+                it will be fun!!!
+              </span>
+            </div>
+          </div>
+
+          <MoveToButtomButton className="m-auto mt-0" />
+        </div>
 
         {/* <StickyHeading className="grid gap-y-4 lg:gap-y-8 font-serif font-semibold text-slate-100">
           <span className="text-3xl sm:text-4xl md:text-[3rem] lg:text-[5rem] sm:leading-[1.2]">
