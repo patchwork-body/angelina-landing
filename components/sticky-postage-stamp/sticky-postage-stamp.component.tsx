@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { FC, useCallback, useContext, useRef } from "react";
-import { StickySlideContext } from "../../contexes/sticky-slide";
+import { SlideSectionContext } from "../../contexes/slide-section";
 import { useAnimation } from "../../hooks/use-animation";
 import { useCssVar } from "../../hooks/use-css-var";
 import { PostageStamp, PostageStampProps } from "../postage-stamp";
@@ -10,7 +10,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
   className,
   ...postageStampProps
 }) => {
-  const { slideRef } = useContext(StickySlideContext);
+  const { slideRef } = useContext(SlideSectionContext);
   const containerRef = useRef<HTMLDivElement>(null);
   const setTranslateYValue = useCssVar("postage-stamp-translate-y");
 
@@ -39,7 +39,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
     <div
       ref={containerRef}
       className={classNames(
-        "origin-center rotate-[-21deg] translate-y-[var(--postage-stamp-translate-y)]",
+        "origin-center rotate-[-21deg] translate-y-[var(--postage-stamp-translate-y)] -top-full transition-all ease-linear opacity-90",
         className,
       )}
     >

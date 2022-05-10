@@ -7,6 +7,18 @@ const tailwindConfig = {
       fontFamily: {
         "serif": "'Montserrat', sans-serif",
       },
+
+      keyframes: {
+        appearance: {
+          "0%": { opacity: 0.0 },
+          "100%": { opacity: 1.0 },
+        },
+      },
+
+      animation: {
+        appearance: "appearance 1s ease-in-out",
+        disappearance: "appearance 1s ease-in-out reverse",
+      },
     },
   },
   plugins: [],
