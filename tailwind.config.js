@@ -4,6 +4,10 @@ const tailwindConfig = {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xs: "460px",
+      },
+
       fontFamily: {
         "serif": "'Montserrat', sans-serif",
       },

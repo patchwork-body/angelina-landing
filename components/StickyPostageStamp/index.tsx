@@ -1,9 +1,11 @@
-import classNames from "classnames";
 import { FC, useCallback, useContext, useRef } from "react";
-import { SlideSectionContext } from "../../contexes/slide-section";
+import classNames from "classnames";
+
+import { SlideSectionContext } from "../../contexes/SlideSection";
 import { useAnimation } from "../../hooks/use-animation";
 import { useCssVar } from "../../hooks/use-css-var";
-import { PostageStamp, PostageStampProps } from "../postage-stamp";
+import { PostageStamp, PostageStampProps } from "../PostageStamp";
+
 export type StickyPostageStampProps = { className?: string } & PostageStampProps;
 
 export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
@@ -29,7 +31,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
       ).toFixed(2),
     );
 
-    setTranslateYValue(() => `${scrollRatioPercent * 250 - 50}%`);
+    setTranslateYValue(() => `${scrollRatioPercent * 250 - 25}%`);
     window.requestAnimationFrame(movePostageStamp);
   }, [setTranslateYValue, slideRef]);
 

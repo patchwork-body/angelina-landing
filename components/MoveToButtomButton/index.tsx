@@ -1,6 +1,5 @@
-import { FC } from "react";
+import { FC, useCallback } from "react";
 import classNames from "classnames";
-import { useCallback } from "react";
 
 export type MoveToButtomButtonProps = {
   className?: string;

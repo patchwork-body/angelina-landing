@@ -2,7 +2,7 @@ import { FC, useCallback, useContext, useEffect, useState } from "react";
 import classNames from "classnames";
 import { useForm } from "react-hook-form";
 
-import { SlideSectionContext } from "../../contexes/slide-section";
+import { SlideSectionContext } from "../../contexes/SlideSection";
 
 type FormValues = {
   email: string;

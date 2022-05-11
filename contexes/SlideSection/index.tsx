@@ -39,12 +39,9 @@ export const SlideSectionContextProvider: FC<SlideSectionContextProviderProps> =
 
   return (
     <SlideSectionContext.Provider value={{ slideRef, setupIntersectionObserver }}>
-      <div
-        ref={slideRef}
-        className={classNames("relative top-0 overflow-hidden h-screen", className)}
-      >
+      <section ref={slideRef} className={classNames("overflow-hidden h-screen", className)}>
         {children}
-      </div>
+      </section>
     </SlideSectionContext.Provider>
   );
 };
