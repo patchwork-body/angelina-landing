@@ -31,7 +31,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
       ).toFixed(2),
     );
 
-    setTranslateYValue(() => `${scrollRatioPercent * 250 - 25}%`);
+    setTranslateYValue(() => `${scrollRatioPercent * 25}%`);
     window.requestAnimationFrame(movePostageStamp);
   }, [setTranslateYValue, slideRef]);
 
@@ -41,7 +41,7 @@ export const StickyPostageStamp: FC<StickyPostageStampProps> = ({
     <div
       ref={containerRef}
       className={classNames(
-        "origin-center rotate-[-21deg] translate-y-[var(--postage-stamp-translate-y)] -top-full transition-all ease-linear opacity-90",
+        "origin-center rotate-[-21deg] translate-y-[var(--postage-stamp-translate-y)] -top-full transition-all ease-linear opacity-75",
         className,
       )}
     >

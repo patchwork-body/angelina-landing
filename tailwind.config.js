@@ -4,6 +4,10 @@ const tailwindConfig = {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
+      },
+
       screens: {
         xs: "460px",
       },
