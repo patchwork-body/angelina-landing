@@ -22,6 +22,7 @@ const Index = () => {
           muted
           poster="/video-placeholder.jpg"
         >
+          <source src="/video.webm" />
           <source src="/video.mp4" />
         </video>
 
