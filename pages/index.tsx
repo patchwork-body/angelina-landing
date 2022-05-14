@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="relative">
       <header className="z-50 fixed top-0 w-screen">
-        <div className="max-w-[1000px] mx-auto grid place-items-end px-3">
+        <div className="max-w-[1000px] mx-auto grid place-items-end pt-3 px-3">
           <VkLink className="text-slate-100 hover:text-[#0077ff] transition-colors" />
         </div>
       </header>
@@ -50,7 +50,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-rows-[auto,1fr] w-full h-full">
-            <div className="grid grid-rows-3 max-w-[400px] min-w-[320px] mt-10 mx-auto">
+            <div className="grid grid-rows-3 max-w-[400px] min-w-[320px] mt-10 mb-5 mx-auto px-5">
               <Comics />
             </div>
 
