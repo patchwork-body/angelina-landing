@@ -1,0 +1,18 @@
+.speech-bubble {
+  @apply relative -rotate-6 rounded-md;
+}
+
+.speech-bubble:before,
+.speech-bubble:after {
+  @apply absolute -z-10;
+  content: "";
+}
+
+.speech-bubble:before {
+  @apply border-0 border-transparent border-r-[3.5em] border-r-slate-100 border-b-[.25em];
+  @apply bottom-0 w-0 h-3 rotate-45 skew-x-[75deg];
+}
+
+.speech-bubble:after {
+  @apply inset-0 rotate-[2deg] translate-x-[0.3em] -translate-y-[.15em] scale-[1.02] bg-slate-100 rounded-md;
+}

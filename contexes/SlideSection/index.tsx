@@ -39,9 +39,17 @@ export const SlideSectionContextProvider: FC<SlideSectionContextProviderProps> =
 
   return (
     <SlideSectionContext.Provider value={{ slideRef, setupIntersectionObserver }}>
-      <section ref={slideRef} className={classNames("overflow-hidden h-screen", className)}>
+      <section ref={slideRef} className={classNames("min-h-screen", className)}>
         {/* NOTE: Don't remove style prop I don't know why but corresponding tailwindcss classes don't work here */}
-        <div style={{ height: "100vh", maxWidth: "1000px" }} className="relative grid mx-auto">
+        <div
+          style={{
+            minHeight: "100vh",
+            maxWidth: "1000px",
+            overflow: "hidden",
+            paddingBottom: "3rem",
+          }}
+          className="relative grid mx-auto"
+        >
           {children}
         </div>
       </section>

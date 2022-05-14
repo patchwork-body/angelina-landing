@@ -26,5 +26,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "tailwindCSS.classAttributes": ["className", "slideClassName", "titleClassName"],
-  "editor.rulers": [100]
+  "editor.rulers": [100],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

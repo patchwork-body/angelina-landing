@@ -62,8 +62,8 @@ export const AscentEmailForm: FC<AscentEmailFormProps> = ({ className }) => {
             "absolute font-serif font-semibold leading-6 cursor-text transition-all",
 
             {
-              "ml-8 text-2xl text-gray-700/50": !isEmailProvided,
-              "ml-2 px-3 pt-1 rounded-t-lg group-focus-within:bg-blue-200 -translate-y-14 text-lg text-gray-50":
+              "ml-4 text-lg text-gray-700/50": !isEmailProvided,
+              "-z-10 ml-2 group-focus-within:px-2 group-focus-within:pt-1 group-focus-within:pb-2 px-1 rounded-t-lg bg-blue-200 -translate-y-12 text-lg text-gray-50":
                 isEmailProvided,
             },
           )}
@@ -74,8 +74,11 @@ export const AscentEmailForm: FC<AscentEmailFormProps> = ({ className }) => {
         <input
           {...register("email")}
           className={classNames(
-            "w-[70vw] md:w-[55vw] lg:w-[40vw] max-w-lg py-5 px-8 rounded-xl focus:ring-8 ring-blue-200 bg-gray-100",
-            "transition-shadow duration-300 outline-none text-2xl text-slate-900 font-serif font-semibold group-hover:shadow-xl",
+            "w-[90vw] max-w-lg py-5 px-4 rounded-xl focus:ring-8 ring-blue-200 bg-gray-100",
+            "transition-shadow duration-300 outline-none text-lg text-slate-900 font-serif font-semibold",
+            {
+              "ring-4": isEmailProvided,
+            },
           )}
           type="email"
         />
@@ -83,9 +86,9 @@ export const AscentEmailForm: FC<AscentEmailFormProps> = ({ className }) => {
 
       <button
         className={classNames(
-          "absolute -bottom-[calc(100%+1rem)] py-5 bg-green-500 w-full rounded-lg",
-          "hover:shadow-xl outline-none focus:ring-8 ring-blue-200",
-          "font-semibold font-serif text-2xl text-gray-100 transition-all duration-500",
+          "absolute -bottom-[calc(100%+1.5rem)] py-5 bg-green-500 w-full rounded-lg",
+          "outline-none focus:ring-8 ring-blue-200",
+          "font-semibold font-serif text-2xl text-gray-100 transition-all",
 
           {
             "opacity-0 pointer-events-none": !isEmailProvided,
