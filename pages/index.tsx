@@ -66,7 +66,7 @@ const Index = () => {
       <SlideSectionContextProvider className="bg-gradient-to-t from-yellow-300 via-sky-300-200 to-purple-300">
         <StickyPostageStamp
           className="absolute left-[5%] hidden md:block drop-shadow-lg"
-          bgImageHref="/big-ben.jpeg"
+          bgImageHref="/big-ben.jpg"
           fillColor="#f3f4f4"
         />
 
@@ -75,8 +75,8 @@ const Index = () => {
 
       <SlideSectionContextProvider className="bg-gradient-to-t from-yellow-400/30 to-sky-500/50">
         <StickyPostageStamp
-          className="absolute left-[5%] hidden md:block drop-shadow-lg"
-          bgImageHref="/wheel.jpeg"
+          className="absolute left-[5%] hidden md:block drop-shadow-lg opacity-75"
+          bgImageHref="/wheel.jpg"
           fillColor="#f3f4f4"
         />
 
