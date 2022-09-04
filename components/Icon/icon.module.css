@@ -1,0 +1,7 @@
+.icon:global {
+  contain: strict;
+  mask-image: var(--image);
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}

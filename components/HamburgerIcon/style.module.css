@@ -1,0 +1,58 @@
+#hamburger-menu {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+#hamburger-menu > #hamburger-lines > #top {
+  transition: all 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+#hamburger-menu:hover > #hamburger-lines > #top {
+  width: 75%;
+}
+
+#hamburger-menu > #hamburger-lines.opened > #top {
+  width: 90px;
+  height: 7px;
+  transition: all 0.2s ease-in-out;
+  transform: translate(-14px, -12px) rotateZ(135deg);
+}
+
+#hamburger-menu > #hamburger-lines > #middle {
+  transition: all 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+#hamburger-menu:hover > #hamburger-lines > #middle {
+  width: 55%;
+}
+
+#hamburger-menu > #hamburger-lines.opened > #middle {
+  transition: all 0.2s ease-in-out;
+  transform: rotateZ(45deg);
+  height: 7px;
+}
+
+#hamburger-menu:hover > #hamburger-lines.opened > #middle {
+  width: 90px;
+}
+
+#hamburger-menu > #hamburger-lines > #bottom {
+  transition: all 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+#hamburger-menu:hover > #hamburger-lines > #bottom {
+  width: 85%;
+  transition: all 0.2s ease-in-out;
+}
+
+#hamburger-menu > #hamburger-lines.opened > #bottom {
+  width: 0;
+  height: 7px;
+  transition: all 0.2s ease-in-out;
+  transform: translate(-14px, -13px) rotateZ(-45deg);
+}

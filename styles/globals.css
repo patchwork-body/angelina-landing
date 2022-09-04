@@ -17,3 +17,16 @@
 :root {
   --postage-stamp-translate-y: 12.5%;
 }
+
+@import "../components/HamburgerIcon/style.module.css";
+
+.primary-gradient {
+  background: rgb(103, 162, 179);
+  background: linear-gradient(
+    125deg,
+    rgba(103, 162, 179, 1) 0%,
+    rgba(103, 162, 179, 1) 50%,
+    rgba(255, 206, 187, 1) 50%,
+    rgba(255, 215, 181, 1) 100%
+  );
+}

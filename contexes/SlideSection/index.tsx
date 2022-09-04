@@ -1,8 +1,9 @@
-import { createContext, FC, MutableRefObject, ReactNode, useCallback, useRef } from "react";
+import { createContext, FC, ReactNode, useCallback, useRef } from "react";
 import classNames from "classnames";
+import { RefObject } from "react";
 
 export type SlideSectionContextValue = {
-  slideRef: MutableRefObject<HTMLDivElement>;
+  slideRef: RefObject<HTMLDivElement> | null;
 
   setupIntersectionObserver: (
     onIntersection: IntersectionObserverCallback,
@@ -28,6 +29,10 @@ export const SlideSectionContextProvider: FC<SlideSectionContextProviderProps> =
 
   const setupIntersectionObserver = useCallback(
     (onIntersection: IntersectionObserverCallback, options: IntersectionObserverInit) => {
+      if (!slideRef.current) {
+        return () => void 0;
+      }
+
       const target = slideRef.current;
       const observer = new IntersectionObserver(onIntersection, options);
       observer.observe(target);

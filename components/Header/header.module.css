@@ -1,0 +1,3 @@
+.header-attached {
+  @apply backdrop-blur-xs shadow-main;
+}

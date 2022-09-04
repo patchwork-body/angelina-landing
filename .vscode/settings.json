@@ -27,5 +27,6 @@
   },
   "tailwindCSS.classAttributes": ["className", "slideClassName", "titleClassName"],
   "editor.rulers": [100],
+  "cSpell.words": ["Kontakte", "qwmbrlfvqlmziuxb", "screamin", "vkontakte"],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
