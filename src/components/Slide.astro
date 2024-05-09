@@ -1,0 +1,17 @@
+---
+const { id, className } = Astro.props;
+---
+
+<article
+  id={id}
+  class:list={[
+    "relative flex items-center first:bg-white/20 even:bg-[#eef1ef]",
+    className,
+  ]}
+>
+  <slot name="visual" />
+
+  <div class="mx-auto w-full max-w-[1200px] px-10 xl:px-0 py-24">
+    <slot name="content" />
+  </div>
+</article>

@@ -1,0 +1,35 @@
+---
+const { href, className } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "text-dark-50/90 font-500 hover:text-primary transition-colors nav-link",
+    className,
+  ]}
+>
+  <slot />
+</a>
+
+<style>
+  .nav-link {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    top: 110%;
+    left: 0;
+    transition: width 0.3s;
+    background-color: #32aa27;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+const { title, desc, image } = Astro.props;
+---
+
+<li
+  class="bg-white shadow-sm rounded-md info-card hover:transform-scale-[105%] transition-transform group"
+>
+  <a href="#">
+    <Image
+      class="object-cover rounded-t-md"
+      src={image}
+      width="600"
+      height="400"
+      alt={title}
+    />
+
+    <div class="flex flex-col gap-2 p-4">
+      <h4
+        class="font-bold text-xl group-hover:text-primary transition-colors flex items-center gap-2"
+      >
+        {title}
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6 rotate-180 transform transition-transform group-hover:translate-x-1"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </h4>
+
+      <p class="text-dark-50 text">{desc}</p>
+    </div>
+  </a>
+</li>

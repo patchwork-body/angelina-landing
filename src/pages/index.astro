@@ -1,0 +1,163 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Header from "./../components/Header.astro";
+import Slide from "../components/Slide.astro";
+import InfoCard from "../components/InfoCard.astro";
+import NavLink from "~/components/NavLink.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <Header title="English teacher" />
+
+  <Slide id="home" className="min-h-[80dvh]">
+    <div
+      slot="visual"
+      style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+              url('https://cdn.b12.io/media/7375c190-3cb2-11e8-bbb9-0242ac11000f-jpg-hero_image.jpeg')"
+      class="absolute left-0 top-0 right-0 bottom-0 h-full w-full bg-cover bg-center bg-fixed"
+    >
+    </div>
+
+    <div
+      slot="content"
+      class="text-white flex flex-col items-start gap-y-2 z-1 relative"
+    >
+      <h2 class="text-[3.875rem] font-bold m-0 leading-tight">
+        English teacher
+      </h2>
+
+      <p class="text-2xl font-500">
+        An educational service that benefits from the knowledge<br /> of highly trained
+        professionals
+      </p>
+
+      <a
+        href="#services"
+        class="uppercase text-lg font-600 bg-primary rounded-1 px-4 py-2 mt-3"
+        >view services</a
+      >
+    </div>
+  </Slide>
+
+  <Slide id="about">
+    <div slot="content" class="flex flex-col md:flex-row gap-x-24 gap-y-10">
+      <div class="flex flex-col my-auto h-full gap-y-4 items-start">
+        <h2 class="text-sm font-semibold text-primary uppercase">About me</h2>
+
+        <h3 class="text-3xl font-bold">
+          Empowering Belgrade<br /> with english education
+        </h3>
+
+        <p class="text-dark-50">
+          English Teacher is dedicated to providing high-quality English
+          education to the community of Belgrade. Our experienced teachers,
+          interactive learning methods, and personalized approach ensure that
+          students develop strong English language skills. We offer a range of
+          courses for all ages and proficiency levels, helping individuals
+          achieve their academic, professional, and personal goals. Join us at
+          English Teacher and embark on a journey to fluency and confidence in
+          English.
+        </p>
+
+        <NavLink href="#services" className="text-lg mt-2">Get in touch</NavLink
+        >
+      </div>
+
+      <Image
+        alt="People gethered in a classroom"
+        height="600"
+        width="500"
+        class="w-full max-h-[400px] md:max-h-[600px] md:max-w-[40%] object-cover aspect-ratio-3/5"
+        src="/people.jpeg"
+      />
+    </div>
+  </Slide>
+
+  <Slide id="services" className="bg-[#eef1ef] flex flex-col align-start">
+    <div slot="content" class="flex flex-col gap-4">
+      <h2 class="text-sm font-semibold text-primary uppercase">services</h2>
+      <h3 class="text-3xl font-bold">
+        We offer a variety of educational services<br /> for all ages
+      </h3>
+
+      <p class="text-dark-50">
+        Our educational services cover all ages and a wide range of subjects.
+        <br />
+        Check out our offerings to see how they can meet your specific needs.
+      </p>
+
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+        <InfoCard
+          title="English for kids"
+          desc="Our English for Kids program is designed to help children develop strong English language skills in a fun and engaging environment."
+          image="/people.jpeg"
+        />
+
+        <InfoCard
+          title="English for adults"
+          desc="Our English for Adults program is designed to help adults improve their English language skills for academic, professional, and personal purposes."
+          image="/people.jpeg"
+        />
+
+        <InfoCard
+          title="Exam preparation"
+          desc="Our Exam Preparation program is designed to help students prepare for a variety of English language exams, including TOEFL, IELTS, and Cambridge exams."
+          image="/people.jpeg"
+        />
+
+        <InfoCard
+          title="Business English"
+          desc="Our Business English program is designed to help professionals improve their English language skills for the workplace."
+          image="/people.jpeg"
+        />
+
+        <InfoCard
+          title="English conversation"
+          desc="Our English Conversation program is designed to help students improve their speaking and listening skills in English."
+          image="/people.jpeg"
+        />
+
+        <InfoCard
+          title="English writing"
+          desc="Our English Writing program is designed to help students improve their writing skills in English."
+          image="/people.jpeg"
+        />
+      </ul>
+    </div>
+  </Slide>
+
+  <Slide id="contacts">
+    <div slot="content" class="grid grid-cols-2 gap-8">
+      <div class="flex flex-col gap-4">
+        <h2 class="text-sm font-semibold text-primary uppercase">contact us</h2>
+        <h3 class="text-3xl font-bold">
+          Feel free to give us a call or send us an email with your questions or
+          comments.
+        </h3>
+
+        <p class="text-dark-50">
+          We would love to hear from you, whether you're interested in working
+          with our team or pursuing a career with us.
+        </p>
+      </div>
+
+      <div class="bg-dark-50/10 rounded-1 p-8 flex flex-col gap-y-2">
+        <h4 class="text-xl font-bold">Email</h4>
+        <a href="mailto:angelinochka@yandex.ru"></a>
+        <h4 class="text-xl font-bold">Telegram</h4>
+        <h4 class="text-xl font-bold">Hours</h4>
+        <ol>
+          <li><span class="w-[20px]">Monday:</span> 9:00 AM - 5:00 PM</li>
+          <li><span class="w-[20px]">Tuesday:</span> 9:00 AM - 5:00 PM</li>
+          <li><span class="w-[20px]">Wednesday:</span> 9:00 AM - 5:00 PM</li>
+          <li><span class="w-[20px]">Thursday:</span> 9:00 AM - 5:00 PM</li>
+          <li><span class="w-[20px]">Friday:</span> 9:00 AM - 5:00 PM</li>
+          <li><span class="w-[20px]">Saturday:</span> 10:00 AM - 2:00 PM</li>
+          <li><span class="w-[20px]">Sunday:</span> Closed</li>
+        </ol>
+      </div>
+    </div>
+  </Slide>
+</Layout>
