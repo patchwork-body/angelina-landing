@@ -1,17 +1,17 @@
 ---
 import { Image } from "astro:assets";
 
-import Layout from "../layouts/Layout.astro";
-import Header from "./../components/Header.astro";
-import Slide from "../components/Slide.astro";
-import InfoCard from "../components/InfoCard.astro";
+import Layout from "~/layouts/Layout.astro";
+import Header from "~/components/Header.astro";
+import Slide from "~/components/Slide.astro";
+import InfoCard from "~/components/InfoCard.astro";
 import NavLink from "~/components/NavLink.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Header title="English teacher" />
 
-  <Slide id="home" className="min-h-[80dvh]">
+  <Slide id="home" className="min-h-screen md:min-h-[80dvh]">
     <div
       slot="visual"
       style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
@@ -21,36 +21,43 @@ import NavLink from "~/components/NavLink.astro";
     </div>
 
     <div
+      data-fade-in
       slot="content"
       class="text-white flex flex-col items-start gap-y-2 z-1 relative"
     >
-      <h2 class="text-[3.875rem] font-bold m-0 leading-tight">
+      <h2 class="text-[3.875rem] font-bold m-0 leading-tight pre-emerge">
         English teacher
       </h2>
 
-      <p class="text-2xl font-500">
+      <p class="text-2xl font-500 animate-delay-200 pre-emerge">
         An educational service that benefits from the knowledge<br /> of highly trained
         professionals
       </p>
 
       <a
         href="#services"
-        class="uppercase text-lg font-600 bg-primary rounded-1 px-4 py-2 mt-3"
+        class="uppercase text-lg font-600 bg-primary rounded-1 px-4 py-2 mt-3 pre-emerge animate-delay-500"
         >view services</a
       >
     </div>
   </Slide>
 
   <Slide id="about">
-    <div slot="content" class="flex flex-col md:flex-row gap-x-24 gap-y-10">
+    <div
+      data-fade-in
+      slot="content"
+      class="flex flex-col md:flex-row gap-x-24 gap-y-10"
+    >
       <div class="flex flex-col my-auto h-full gap-y-4 items-start">
-        <h2 class="text-sm font-semibold text-primary uppercase">About me</h2>
+        <h2 class="text-sm font-semibold text-primary uppercase pre-emerge">
+          About me
+        </h2>
 
-        <h3 class="text-3xl font-bold">
+        <h3 class="text-3xl font-bold pre-emerge animate-delay-200">
           Empowering Belgrade<br /> with english education
         </h3>
 
-        <p class="text-dark-50">
+        <p class="text-dark-50 animate-delay-500 pre-emerge">
           English Teacher is dedicated to providing high-quality English
           education to the community of Belgrade. Our experienced teachers,
           interactive learning methods, and personalized approach ensure that
@@ -61,15 +68,16 @@ import NavLink from "~/components/NavLink.astro";
           English.
         </p>
 
-        <NavLink href="#services" className="text-lg mt-2">Get in touch</NavLink
-        >
+        <NavLink href="#services" className="text-lg mt-2">
+          <span class="pre-emerge animate-delay-700">Get in touch</span>
+        </NavLink>
       </div>
 
       <Image
         alt="People gethered in a classroom"
         height="600"
         width="500"
-        class="w-full max-h-[400px] md:max-h-[600px] md:max-w-[40%] object-cover aspect-ratio-3/5"
+        class="w-full max-h-[400px] md:max-h-[600px] md:max-w-[40%] object-cover aspect-ratio-3/5 pre-emerge"
         src="/people.jpeg"
       />
     </div>
@@ -77,49 +85,60 @@ import NavLink from "~/components/NavLink.astro";
 
   <Slide id="services" className="bg-[#eef1ef] flex flex-col align-start">
     <div slot="content" class="flex flex-col gap-4">
-      <h2 class="text-sm font-semibold text-primary uppercase">services</h2>
-      <h3 class="text-3xl font-bold">
-        We offer a variety of educational services<br /> for all ages
-      </h3>
+      <div data-fade-in>
+        <h2 class="text-sm font-semibold text-primary uppercase pre-emerge">
+          services
+        </h2>
 
-      <p class="text-dark-50">
-        Our educational services cover all ages and a wide range of subjects.
-        <br />
-        Check out our offerings to see how they can meet your specific needs.
-      </p>
+        <h3 class="text-3xl font-bold pre-emerge animate-delay-200">
+          We offer a variety of educational services<br /> for all ages
+        </h3>
 
-      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+        <p class="text-dark-50 pre-emerge animate-delay-500">
+          Our educational services cover all ages and a wide range of subjects.
+          <br />
+          Check out our offerings to see how they can meet your specific needs.
+        </p>
+      </div>
+
+      <ul data-fade-in class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
         <InfoCard
+          class="pre-emerge"
           title="English for kids"
           desc="Our English for Kids program is designed to help children develop strong English language skills in a fun and engaging environment."
           image="/people.jpeg"
         />
 
         <InfoCard
+          class="pre-emerge"
           title="English for adults"
           desc="Our English for Adults program is designed to help adults improve their English language skills for academic, professional, and personal purposes."
           image="/people.jpeg"
         />
 
         <InfoCard
+          class="pre-emerge"
           title="Exam preparation"
           desc="Our Exam Preparation program is designed to help students prepare for a variety of English language exams, including TOEFL, IELTS, and Cambridge exams."
           image="/people.jpeg"
         />
 
         <InfoCard
+          class="pre-emerge"
           title="Business English"
           desc="Our Business English program is designed to help professionals improve their English language skills for the workplace."
           image="/people.jpeg"
         />
 
         <InfoCard
+          class="pre-emerge"
           title="English conversation"
           desc="Our English Conversation program is designed to help students improve their speaking and listening skills in English."
           image="/people.jpeg"
         />
 
         <InfoCard
+          class="pre-emerge"
           title="English writing"
           desc="Our English Writing program is designed to help students improve their writing skills in English."
           image="/people.jpeg"
@@ -129,35 +148,230 @@ import NavLink from "~/components/NavLink.astro";
   </Slide>
 
   <Slide id="contacts">
-    <div slot="content" class="grid grid-cols-2 gap-8">
-      <div class="flex flex-col gap-4">
-        <h2 class="text-sm font-semibold text-primary uppercase">contact us</h2>
-        <h3 class="text-3xl font-bold">
+    <div data-fade-in slot="content" class="flex flex-col lg:flex-row gap-8">
+      <div class="flex flex-1 flex-col gap-4">
+        <h2 class="text-sm font-semibold text-primary uppercase pre-emerge">
+          contact us
+        </h2>
+
+        <h3 class="text-3xl font-bold pre-emerge animate-delay-200">
           Feel free to give us a call or send us an email with your questions or
           comments.
         </h3>
 
-        <p class="text-dark-50">
+        <p class="text-dark-50 pre-emerge animate-delay-500">
           We would love to hear from you, whether you're interested in working
           with our team or pursuing a career with us.
         </p>
+
+        <form
+          method="POST"
+          class="flex flex-col lg:max-w-md min-w-full gap-y-5 pre-emerge"
+        >
+          <label class="flex flex-col gap-y-2">
+            <span class="font-semibold">
+              Name <span class="text-red-5">*</span>
+            </span>
+
+            <input
+              type="text"
+              placeholder="Ivan Ivanov"
+              name="name"
+              class="border rounded-sm border-black px-4 py-2 placeholder-black/50"
+            />
+          </label>
+
+          <label class="flex flex-col gap-y-2">
+            <span class="font-semibold">
+              Email Address <span class="text-red-5">*</span>
+            </span>
+
+            <input
+              type="email"
+              placeholder="example@email.ru"
+              name="email"
+              class="border rounded-sm border-black px-4 py-2 placeholder-black/50"
+            />
+          </label>
+
+          <label class="flex flex-col gap-y-2">
+            <span class="font-semibold">Phone number</span>
+
+            <input
+              type="tel"
+              placeholder="+7 999 999 99 99"
+              name="phone"
+              class="border rounded-sm border-black px-4 py-2 placeholder-black/50"
+            />
+          </label>
+
+          <label class="flex flex-col gap-y-2">
+            <span class="font-semibold"> Message </span>
+
+            <textarea
+              placeholder="Message"
+              class="border rounded-sm border-black px-4 py-2 placeholder-black/50 h-[120px] resize-none"
+            ></textarea>
+          </label>
+
+          <button
+            type="submit"
+            class="uppercase text-lg text-white font-600 bg-primary rounded-1 px-4 py-2 mt-3"
+          >
+            Submit
+          </button>
+        </form>
       </div>
 
-      <div class="bg-dark-50/10 rounded-1 p-8 flex flex-col gap-y-2">
-        <h4 class="text-xl font-bold">Email</h4>
-        <a href="mailto:angelinochka@yandex.ru"></a>
-        <h4 class="text-xl font-bold">Telegram</h4>
-        <h4 class="text-xl font-bold">Hours</h4>
-        <ol>
-          <li><span class="w-[20px]">Monday:</span> 9:00 AM - 5:00 PM</li>
-          <li><span class="w-[20px]">Tuesday:</span> 9:00 AM - 5:00 PM</li>
-          <li><span class="w-[20px]">Wednesday:</span> 9:00 AM - 5:00 PM</li>
-          <li><span class="w-[20px]">Thursday:</span> 9:00 AM - 5:00 PM</li>
-          <li><span class="w-[20px]">Friday:</span> 9:00 AM - 5:00 PM</li>
-          <li><span class="w-[20px]">Saturday:</span> 10:00 AM - 2:00 PM</li>
-          <li><span class="w-[20px]">Sunday:</span> Closed</li>
+      <div
+        class="flex bg-dark-50/10 rounded-1 md:min-w-md px-4 py-2 md:px-8 md:py-6 flex flex-col gap-y-2 pre-emerge text-[12px] md:text-[16px]"
+      >
+        <h4 class="text-lg md:text-xl font-bold">Email</h4>
+
+        <a
+          href="mailto:angelinochka@yandex.ru"
+          class="flex items-center gap-2 text-dark-50"
+        >
+          <svg
+            class="fill-current"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 12 8"
+            width="22px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 8h11.2V0H0v8zm5.6-2.673l1.095-.914 3.522 2.947H.983l3.522-2.947 1.095.914zm1.594-1.33l3.366-2.81v5.626L7.194 3.996zM5.6 4.492L.985.64h9.23L5.6 4.493zm-1.594-.497L.64 6.813V1.186l3.366 2.81z"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+            >
+            </path>
+          </svg>
+
+          angelinochka@yandex.ru
+        </a>
+
+        <h4 class="text-lg md:text-xl font-bold">Telegram</h4>
+
+        <a
+          href="https://t.me/patchwork_body"
+          class="flex items-center gap-2 text-dark-50"
+        >
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 256 256"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            preserveAspectRatio="xMidYMid"
+          >
+            <g>
+              <path
+                d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z"
+                class="fill-current"
+              >
+              </path>
+              <path
+                d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308"
+                fill="#FFFFFF"
+              >
+              </path>
+              <path
+                d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475"
+                fill="#D2E5F1"
+              >
+              </path>
+              <path
+                d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624"
+                fill="#B5CFE4"
+              >
+              </path>
+            </g>
+          </svg>
+
+          @patchwork_body
+        </a>
+
+        <h4 class="text-lg md:text-xl font-bold">Hours</h4>
+
+        <ol class="text-dark-50">
+          <li>
+            <span class="w-[110px] inline-block">Monday:</span> 9:00 AM - 5:00 PM
+          </li>
+
+          <li>
+            <span class="w-[110px] inline-block">Tuesday:</span> 9:00 AM - 5:00 PM
+          </li>
+
+          <li>
+            <span class="w-[110px] inline-block">Wednesday:</span> 9:00 AM - 5:00
+            PM
+          </li>
+
+          <li>
+            <span class="w-[110px] inline-block">Thursday:</span> 9:00 AM - 5:00
+            PM
+          </li>
+
+          <li>
+            <span class="w-[110px] inline-block">Friday:</span> 9:00 AM - 5:00 PM
+          </li>
+
+          <li>
+            <span class="w-[110px] inline-block">Saturday:</span> 10:00 AM - 2:00
+            PM
+          </li>
+
+          <li><span class="w-[110px] inline-block">Sunday:</span> Closed</li>
         </ol>
       </div>
     </div>
   </Slide>
 </Layout>
+
+<script>
+  const targetNodes = document.querySelectorAll("[data-fade-in]");
+
+  for (const node of targetNodes) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          entry.target.querySelectorAll(".pre-emerge").forEach((el) => {
+            if (el.classList.contains("emerge")) return;
+            el.classList.add("emerge");
+          });
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(node);
+  }
+</script>
+
+<style>
+  .pre-emerge {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  .emerge {
+    animation-name: emerge;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    will-change: transform, opacity;
+  }
+
+  @keyframes emerge {
+    50% {
+      opacity: 0.5;
+      transform: translateY(-25px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

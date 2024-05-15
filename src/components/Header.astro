@@ -8,12 +8,22 @@ const { title } = Astro.props;
   class="fixed w-full top-0 bg-white bg-op-90 shadow-sm backdrop-blur-md py-4 z-50"
 >
   <div
-    class="mx-auto max-w-[1200px] flex justify-between items-center px-10 xl:px-0"
+    class="mx-auto max-w-[1200px] flex justify-between items-center px-4 sm:px-10 xl:px-0"
   >
-    <h1 class="uppercase font-extrabold text-3xl"><a href="/">{title}</a></h1>
+    <h1 class="uppercase font-extrabold text-xl md:text-3xl z-10">
+      <a href="/">{title}</a>
+    </h1>
 
-    <nav>
-      <ul class="flex gap-x-4 align-center h-full">
+    <button id="hamburger" class="md:hidden z-10">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="menu w-6 h-6">
+        <path id="top-line" d="M2 5h16a1 1 0 110 2H2a1 1 0 110-2z"></path>
+        <path id="middle-line" d="M2 10h16a1 1 0 110 2H2a1 1 0 110-2z"></path>
+        <path id="bottom-line" d="M2 15h16a1 1 0 110 2H2a1 1 0 110-2z"></path>
+      </svg>
+    </button>
+
+    <nav id="dropdown" class="dropdown md:block">
+      <ul class="flex flex-col place-items-center md:flex-row gap-x-4 h-full">
         <li><NavLink href="#home">Home</NavLink></li>
         <li><NavLink href="#about">About</NavLink></li>
         <li><NavLink href="#services">Services</NavLink></li>
@@ -22,3 +32,80 @@ const { title } = Astro.props;
     </nav>
   </div>
 </header>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const dropdown = document.getElementById("dropdown");
+
+  dropdown?.addEventListener("click", () => {
+    dropdown?.classList.remove("open");
+    hamburger?.classList.toggle("open");
+    document.documentElement.classList.remove("overflow-hidden");
+    document.body.classList.remove("overflow-hidden");
+  });
+
+  hamburger?.addEventListener("click", () => {
+    dropdown?.classList.toggle("open");
+    hamburger.classList.toggle("open");
+    document.documentElement.classList.toggle("overflow-hidden");
+    document.body.classList.toggle("overflow-hidden");
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      dropdown?.classList.remove("open");
+      hamburger?.classList.remove("open");
+      document.documentElement.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+  });
+</script>
+
+<style>
+  #top-line,
+  #middle-line,
+  #bottom-line {
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
+  #hamburger.open #top-line {
+    transform: rotate(45deg) translate(30%, -30%);
+  }
+
+  #hamburger.open #middle-line {
+    opacity: 0;
+  }
+
+  #hamburger.open #bottom-line {
+    transform: rotate(-45deg) translate(-50%);
+  }
+
+  .dropdown {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+      position: static;
+      padding-top: 0;
+    }
+  }
+
+  .dropdown.open {
+    display: block;
+    position: fixed;
+    padding-top: 40%;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: white;
+    min-height: 100dvh;
+    min-width: 100dvw;
+
+    ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>
